@@ -9,7 +9,7 @@ export default {
 
 const Template = args => <Task {...args} />;
 
-const Default = Template({});
+export const Default = Template.bind({});
 Default.args = {
   task: {
     id: '1',
@@ -19,7 +19,7 @@ Default.args = {
   },
 };
 
-const Pinned = Template({});
+export const Pinned = Template.bind({});
 Pinned.args = {
   task: {
     ...Default.args.task,
@@ -27,11 +27,10 @@ Pinned.args = {
   },
 };
 
-const Archived = Template({});
+export const Archived = Template.bind({});
 Archived.args = {
   task: {
     ...Default.args.task,
     state: 'TASK_ARCHIVED',
   },
 };
-
